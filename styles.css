@@ -1,18 +1,17 @@
 @media screen and (max-width: 600px) {
-  .container h1{
+  .container h1 {
     font-size: 4vw;
   }
   ul li {
     margin: 0.5rem;
   }
-  .logo{
+  .logo {
     font-size: 1.5rem;
   }
 }
 
-
 body {
-  /* flex-wrap:wrap ; */
+  flex-wrap:wrap ;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -21,9 +20,26 @@ body {
   color: black;
 }
 .navbar {
+  overflow: hidden;
+  background-color: #1a1c20;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.navbar li a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 26px;
+  text-decoration: none;
+}
+.navbar a:hover {
+  background: #ddd;
+  color: black;
 }
 .logo {
   font-family: "Sofia", sans-serif;
@@ -51,13 +67,13 @@ ul :hover a :hover {
 }
 
 .container {
-
   display: grid;
   place-content: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 50vh;
   position: relative;
   isolation: isolate;
+  margin-top: 130px;
 }
 .container ::after {
   content: " ";
@@ -101,16 +117,81 @@ ul :hover a :hover {
   text-align: center;
 }
 .introduction p {
-  font-size: 2rem;
+  font-size: 4rem;
 }
 .introduction h1 {
   line-height: 0px;
   text-align: center;
   width: 100%;
-  font-size: 3rem;
+  font-size: 6rem;
   color: rgb(228, 228, 83);
 }
 .introduction img {
- max-width: 100%;
+  max-width: 40%;
   height: auto;
+}
+.tab-menu{
+  width: 100%;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.tab-menu button{
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 160px;
+  transition: 0.3s;
+  font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+  /* width: 100%; */
+}
+.tab-menu button:hover{
+  background-color: #ddd;
+}
+.tab-menu button.active{
+  background-color: #ccc;
+}
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.tabcontent h1{
+  line-height: 0;
+  text-align: center;
+  font-size: 3vw;
+  color: rgb(228, 83, 85);
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: ellipsis;
+}
+.tabcontent p{
+  font-size: 2vw;
+  text-align: justify;
+}
+
+.font{
+  line-height: 0;
+  text-align: center;
+  font-size: 5rem;
+  color: rgb(228, 228, 83);
+}
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 2% 0%;
+  cursor: pointer;
+  font-size: 300%;
+  margin: 0 10%;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.btn a{
+  color: white;
+  text-decoration: none;
 }
