@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Implement</title>
+  </head>
+  <body>
+    <div class="form">
+      <h1>Thông Tin Máy Tính</h1>
+      <label>Tên máy</label>
+      <input type="text" id="name" />
+      <br />
+      <label>Hệ điều hành</label>
+      <input type="text" id="system" />
+      <br />
+      <label>CPU</label>
+      <input type="text" id="cpu" />
+      <br />
+      <label>Giá tiền</label>
+      <input type="text" id="coins" />
+      <br />
+      <button type="button" onclick="addComputer()">Thêm</button>
+      <button type="button" onclick="saveEditedComputer()">Lưu</button>
+      <div class="search">
+        <button type="button" onclick="showSearchModal()">Tìm kiếm</button>
+        <div id="searchModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="hideSearchModal()">&times;</span>
+            <label>Tìm theo tên máy:</label>
+            <input type="text" id="searchName" oninput="searchComputer()" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="comTable">
+      <h1>Danh Sách</h1>
+      <table style="width: 80%">
+        <tr>
+          <td>Tên Máy</td>
+          <td>Hệ điều hành</td>
+          <td>CPU</td>
+          <td>Giá tiền</td>
+        </tr>
+        <tbody id="comList"></tbody>
+      </table>
+    </div>
+    <script>
+      let computers = [];
+      const comTable = document.getElementById("comTable");
+      const comList = document.getElementById("comList");
+      let editComputer = null;
+
+      function addComputer() {
+        const comName = document.getElementById("name").value;
+        const comSystem = document.getElementById("system").value;
+        const comCPU = document.getElementById("cpu").value;
+        const comCoins = document.getElementById("coins").value;
+
+        if (comName && comSystem && comCPU && comCoins) {
+          const com = {
+            name: comName,
+            system: comSystem,
+            cpu: comCPU,
+            coins: comCoins,
+          };
+          computers.push(com);
+
+          const newRow = comList.insertRow();
+          newRow.innerHTML = `<td>${com.name}</td><td>${com.system}</td><td>${com.cpu}</td><td>${com.coins}</td><td><button onclick="editComputerRow(this)">Sửa</button><button onclick="deleteComputerRow(this)">Xóa</button></td>`;
+
+          document.getElementById("comName").value = "";
+          document.getElementById("comSystem").value = "";
+          document.getElementById("comCPU").value = "";
+          document.getElementById("comCoins").value = "";
+        }
+      }
+
+      function editComputerRow(button) {
+        const row = button.closest("tr");
+        const comName = row.cells[0].textContent;
+        const comSystem = row.cells[1].textContent;
+        const comCPU = row.cells[2].textContent;
+        const comCoins = row.cells[3].textContent;
+
+        editComputer = {
+          name: comName,
+          system: comSystem,
+          cpu: comCPU,
+          coins: comCoins,
+        };
+        document.getElementById("name").value = comName;
+        document.getElementById("system").value = comSystem;
+        document.getElementById("cpu").value = comCPU;
+        document.getElementById("coins").value = comCoins;
+      }
+
+      function saveEditedComputer() {
+        if (editComputer) {
+          editComputer.name = document.getElementById("name").value;
+          editComputer.system = document.getElementById("system").value;
+          editComputer.cpu = document.getElementById("cpu").value;
+          editComputer.coins = document.getElementById("coins").value;
+
+          const rows = comList.getElementsByTagName("tr");
+          for (let i = 0; i < rows.length; i++) {
+            if (rows[i].cells[0].textContent === editComputer.name) {
+              rows[i].cells[0].textContent = editComputer.name;
+              rows[i].cells[1].textContent = editComputer.system;
+              rows[i].cells[2].textContent = editComputer.cpu;
+              rows[i].cells[3].textContent = editComputer.coins;
+              break;
+            }
+          }
+
+          document.getElementById("name").value = "";
+          document.getElementById("system").value = "";
+          document.getElementById("cpu").value = "";
+          document.getElementById("coins").value = "";
+
+          editedComputer = null;
+        }
+      }
+
+      function deleteComputerRow(button) {
+        const row = button.closest("tr");
+        const comName = row.cells[0].textContent;
+        const comIndex = computers.findIndex((s) => s.name === comName);
+
+        if (comIndex !== -1) {
+          computers.splice(comIndex, 1);
+          row.remove();
+        }
+      }
+
+      function showSearchModal() {
+        document.getElementById("searchModal").style.display = "block";
+      }
+
+      function hideSearchModal() {
+        document.getElementById("searchModal").style.display = "none";
+      }
+
+      function searchComputer() {
+        const searchName = document.getElementById("searchName").value;
+        const filteredComputers = computers.filter((com) =>
+          com.name.includes(searchName)
+        );
+        displayComputers(filteredComputers);
+      }
+
+      function displayComputers(computers) {
+        const tbody = comList;
+        tbody.innerHTML = "";
+
+        computers.forEach((com) => {
+          const newRow = tbody.insertRow();
+          newRow.innerHTML = `<td>${com.name}</td><td>${com.system}</td><td>${com.cpu}</td><td>${com.coins}</td>`;
+        });
+      }
+
+      displayComputers(computers);
+    </script>
+  </body>
+</html>
