@@ -1,24 +1,25 @@
-/* @media only screen and (max-width: 590px) {
-  #navbar-menu {
-    flex-direction: column;
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
   }
-  .box-menu {
-    width: 100%;
-    height: 43px;
-    font-size: 16px;
+  .navbar-brand {
+    font-size: 2vh;
+  }
+  .box-menu ul li a {
+    font-size: 2vh;
   }
 }
-@media only screen and (min-width: 680px) {
-  #navbar-menu {
-    flex-direction: row;
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
   }
-  .box-menu {
-   
-    height: 200px;
-    font-size: 32px;
+  .navbar-brand {
+    font-size: 1.5vh;
   }
-} */
-
+  .box-menu ul li a {
+    font-size: 1.5vh;
+  }
+}
 body {
   flex-wrap: wrap;
   font-size: 16px;
@@ -32,72 +33,7 @@ body {
   float: right;
   display: none;
 }
-/* ul .dropdown {
-  width: 100%;
-  border: 1px solid #192433;
-  background-color: #192433;
-  position: absolute;
-  display: none;
-}
-ul .dropdown ul li{
-  background-color: #192433;
-  width: 60%;
-  bottom: 5vh;
-  left: 5vh; 
-}
-ul .dropdown ul li > ul li{
-  background-color: #192433;
-  width: 125%;
-  left: 1.2vh; 
-}
-ul .dropdown li {
-  display: block;
-  color: white;
-  border-bottom: 1px solid white;
-  padding: 0;
-  text-align: center;
-  cursor: pointer;
-}
-li {
-  position: relative;
-}
-ul.dropdown ul {
-  display: none;
-}
-.navbar.bootsnav .scroll:hover > ul {
-  display: block;
-}
-.navbar.bootsnav .scroll .dropdown .scroll:hover > ul {
-  display: block;
-}
-nav.navbar.bootsnav ul.dropdown > li > a:hover,
-nav.navbar.bootsnav ul.nav > li > a:focus {
-  color: #4e4ffa;/
-}
-nav.navbar.bootsnav ul.dropdown li > ul li > a:hover,
-nav.navbar.bootsnav ul.nav > li > a:focus {
-  color: #4e4ffa;/
-} */
-.introduction {
-  margin: 0 auto;
-  text-align: center;
-}
-.introduction p {
-  font-size: 4rem;
-}
-h1 {
-  line-height: 0px;
-  text-align: center;
-  width: 100%;
-  font-size: 6rem;
-  color: rgb(228, 228, 83);
-}
-.introduction img {
-  max-width: 40%;
-  height: auto;
-}
-
-*/ .tabcontent {
+.tabcontent {
   padding: 6px 12px;
   border-top: none;
 }
@@ -114,7 +50,6 @@ h1 {
   font-size: 1.5vw;
   text-align: justify;
 }
-
 .btn {
   background-color: DodgerBlue;
   border: none;
@@ -132,12 +67,10 @@ h1 {
   color: white;
   text-decoration: none;
 }
-
 a,
 a:hover,
 a:active,
 a:focus {
-  /* display: flex; */
   text-decoration: none;
   color: #444a57;
   font-size: 20px;
@@ -163,8 +96,6 @@ nav.navbar.bootsnav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/*.navbar-brand*/
-
 .navbar-header a.navbar-brand,
 .navbar-header a.navbar-brand:hover,
 .navbar-header a.navbar-brand:focus {
@@ -174,7 +105,7 @@ nav.navbar.bootsnav {
   letter-spacing: 3px;
   font-family: "Sofia", sans-serif;
   font-weight: 700;
-  float: left;
+  /* float: left; */
 }
 
 .navbar-header a.navbar-brand span {
@@ -226,23 +157,10 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 .menu-ui-design::-webkit-scrollbar-thumb {
   background-color: #4e4ffa;
 }
-
-/* nav.navbar.bootsnav .navbar-toggle {
-  position: relative;
-  background-color: transparent;
-  border: 1px solid #4e4ffa;
-  padding: 10px;
-  top: 0;
-}
-nav.navbar.bootsnav .navbar-toggle i {
-  color: #4e4ffa;
-} */
-
 .welcome-hero {
   display: grid;
   place-content: center;
   text-align: center;
-  /* margin-top: 100px; */
   position: relative;
   background: url(./images/IMG_20230331_155006.jpg);
   background-position: center;
@@ -267,8 +185,6 @@ nav.navbar.bootsnav .navbar-toggle i {
   width: 100%;
   z-index: 99;
 }
-
-/*.welcome-hero-txt*/
 .welcome-hero-txt {
   text-align: center;
   padding: 290px 0 372px;
@@ -285,7 +201,6 @@ nav.navbar.bootsnav .navbar-toggle i {
   text-transform: initial;
   color: #edd4d4ef;
   font-weight: 500;
-  /* max-width: 735px; */
   margin: 0 auto;
 }
 *{
@@ -297,6 +212,9 @@ header {
   background-color: #dfb0da;
   text-align: center;
   padding: 1vh;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
 }
 .navbar-header {
   display: flex;
@@ -312,6 +230,7 @@ header {
 
 .box-menu{ 
     background-color: #dfb0da;
+    padding-top: 70px;
  }
  .box-menu ul{ 
     display: flex;
