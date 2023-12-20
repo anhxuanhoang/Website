@@ -21,12 +21,10 @@
   <body>
     <header>
       <div class="navbar-header">
-    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-    <i class="fa fa-bars"></i>
-    </button> -->
-        <a class="navbar-brand" href="index.html"
-          >ANH XUÂN<span></span
-        ></a>
+      <div class="toggle">
+        <i class="fa fa-bars"></i>
+      </div>
+        <a class="navbar-brand" href="index.html">ANH XUÂN</a>
       </div>
       <div class="box-menu">
         <ul>
@@ -45,7 +43,7 @@
                     <ul>
                       <li ><a href="#Requirement " title="Requirement">Requirement</a></li>
                       <li><a href="#Design" title="Design">Design</a></li>
-                      <li><a href="implement.html" title="Implement">Implement</a></li> 
+                      <li><a href="implement.html" title="Implement" target="_blank">Implement</a></li> 
                     </ul>
                   </div>
                 </li>
@@ -57,7 +55,7 @@
                         <div class="box-submenu-3">
                           <ul>
                             <li class="scroll"><a href="#Design_ex1" title="Design">Design</a></li>
-                            <li class="scroll"><a href="F_Patten/index.html" title="Implement">Implement</a></li> 
+                            <li class="scroll"><a href="F_Patten/index.html" title="Implement" target="_blank">Implement</a></li> 
                           </ul>
                         </div>  
                       </li>
@@ -65,7 +63,7 @@
                         <div class="box-submenu-3">  
                           <ul>
                             <li class="scroll"><a href="#Design_ex2" title="Design">Design</a></li>
-                            <li class="scroll"><a href="Z_Pattern/index.html" title="Implement">Implement</a></li> 
+                            <li class="scroll"><a href="Z_Pattern/index.html" title="Implement" target="_blank">Implement</a></li> 
                           </ul>
                         </div>  
                       </li>
@@ -86,7 +84,13 @@
         </div>
       </div>
     </section>
-  </body>
+    <script>
+      $(document).ready(function() {
+          $('.toggle').click(function() {
+              $('.box-menu').slideToggle();
+          });
+      })
+    </script>  
     <div class="introduction">
       <h1>About Me</h1>
       <p>

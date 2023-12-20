@@ -19,12 +19,10 @@
 <body>
   <header>
     <div class="navbar-header">
-  <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-  <i class="fa fa-bars"></i>
-  </button> -->
-      <a class="navbar-brand" href="index.html"
-        >ANH XUÂN<span></span
-      ></a>
+    <div class="toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+      <a class="navbar-brand" href="index.html">ANH XUÂN</a>
     </div>
     <div class="box-menu">
       <ul>
@@ -43,7 +41,7 @@
                   <ul>
                     <li ><a href="#Requirement " title="Requirement">Requirement</a></li>
                     <li><a href="#Design" title="Design">Design</a></li>
-                    <li><a href="implement.html" title="Implement">Implement</a></li> 
+                    <li><a href="implement.html" title="Implement" target="_blank">Implement</a></li> 
                   </ul>
                 </div>
               </li>
@@ -84,6 +82,13 @@
       </div>
     </div>
   </section>
+  <script>
+    $(document).ready(function() {
+        $('.toggle').click(function() {
+            $('.box-menu').slideToggle();
+        });
+    })
+  </script>  
   <section id="Design_ex1">
       <div class="tabcontent">
           <h1>Bản Thiết Kế F-Patten</h1>

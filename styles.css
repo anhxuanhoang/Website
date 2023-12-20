@@ -1,25 +1,26 @@
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     font-size: 14px;
   }
   .navbar-brand {
-    font-size: 2vh;
+    font-size: 2em;
   }
   .box-menu ul li a {
-    font-size: 2vh;
+    font-size: 2em;
+  }
+  .box-menu{
+    display: none;
+  }
+  .toggle {
+    display: block;
+  }
+  .toggle i{
+    font-size: 100px;
+    color: #fff;
+    cursor: pointer;
   }
 }
-@media only screen and (max-width: 480px) {
-  body {
-    font-size: 12px;
-  }
-  .navbar-brand {
-    font-size: 1.5vh;
-  }
-  .box-menu ul li a {
-    font-size: 1.5vh;
-  }
-}
+
 body {
   flex-wrap: wrap;
   font-size: 16px;
@@ -49,6 +50,10 @@ body {
 .tabcontent p {
   font-size: 1.5vw;
   text-align: justify;
+}
+.introduction{
+  text-align: center;
+  font-size: 2vh;
 }
 .btn {
   background-color: DodgerBlue;
@@ -105,14 +110,9 @@ nav.navbar.bootsnav {
   letter-spacing: 3px;
   font-family: "Sofia", sans-serif;
   font-weight: 700;
-  /* float: left; */
+  padding-left: 2vh;
 }
 
-.navbar-header a.navbar-brand span {
-  display: inline-block;
-  color: #4e4ffa;
-  text-transform: capitalize;
-}
 
 .wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand,
 .wrap-sticky nav.navbar.bootsnav.sticked .navbar-header a.navbar-brand:hover,
@@ -137,20 +137,6 @@ nav.navbar.bootsnav ul.nav > li > a:hover,
 nav.navbar.bootsnav ul.nav > li > a:focus {
   color: blue;
 }
-
-/* nav.navbar.bootsnav ul.nav > li.dropdown > a.dropdown-toggle:after {
-  content: "";
-}
-nav.navbar.bootsnav ul.nav > li.dropdown span {
-  font-size: 8px;
-  margin-left: 15px;
-  
-}
-.wrap-sticky nav.navbar.bootsnav.sticked ul.nav > li > a{padding:30px 25px;}
-.menu-ui-design{overflow-y:scroll;height: 350px;}
-.menu-ui-design::-webkit-scrollbar {
-  width:5px;
-} */
 .menu-ui-design::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 8px #000;
 }
@@ -211,6 +197,7 @@ nav.navbar.bootsnav ul.nav > li.dropdown span {
 header {
   background-color: #dfb0da;
   text-align: center;
+  justify-content: center;
   padding: 1vh;
   position: fixed;
   z-index: 1000;
@@ -229,8 +216,10 @@ header {
 }
 
 .box-menu{ 
-    background-color: #dfb0da;
-    padding-top: 70px;
+  display: block;
+  align-items: center;
+  background-color: #dfb0da;
+  padding-top: 50px;
  }
  .box-menu ul{ 
     display: flex;
@@ -318,4 +307,7 @@ header {
 }
 .box-menu ul li:hover .box-submenu ul li a:hover{
   color: yellowgreen;
+}
+.toggle{
+  display: none;
 }

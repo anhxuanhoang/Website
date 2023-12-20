@@ -21,9 +21,9 @@
   <body>
     <header>
       <div class="navbar-header">
-    <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-    <i class="fa fa-bars"></i>
-    </button> -->
+      <div class="toggle">
+        <i class="fa fa-bars"></i>
+      </div>
         <a class="navbar-brand" href="index.html">ANH XUÂN</a>
       </div>
       <div class="box-menu">
@@ -84,5 +84,12 @@
         </div>
       </div>
     </section>
+    <script>
+      $(document).ready(function() {
+          $('.toggle').click(function() {
+              $('.box-menu').slideToggle();
+          });
+      })
+  </script>  
   </body>
 </html>
