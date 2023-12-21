@@ -1,24 +1,54 @@
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   body {
     font-size: 14px;
   }
   .navbar-brand {
     font-size: 2em;
   }
-  .box-menu ul li a {
-    font-size: 2em;
+  .navbar-header {
+    display: flex;
+    justify-content: space-between; 
+  }
+  .box-menu ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .box-menu ul li {
+    margin-right: 0;
+    position: relative;
+  }
+  .box-menu a {
+    color: #333;
   }
   .box-menu{
     display: none;
+    flex-direction: column;
   }
   .toggle {
     display: block;
+    cursor: pointer;
   }
   .toggle i{
-    font-size: 100px;
+    font-size: 24px;
     color: #fff;
     cursor: pointer;
   }
+  .box-submenu,
+  .box-submenu-2,
+  .box-submenu-3 {
+    position: static;
+    display: none;
+  }
+  .submenu-hover:hover .box-submenu,
+  .submenu-hover:hover .box-submenu-2,
+  .submenu-hover:hover .box-submenu-3 {
+    display: block;
+  }
+}
+*{
+  box-sizing: border-box;
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing: border-box;
 }
 
 body {
@@ -52,9 +82,9 @@ body {
   text-align: justify;
 }
 .introduction{
+  max-width: 100%;
   text-align: center;
   font-size: 2vh;
-  max-width : 100%;
 }
 .btn {
   background-color: DodgerBlue;
@@ -145,6 +175,7 @@ nav.navbar.bootsnav ul.nav > li > a:focus {
   background-color: #4e4ffa;
 }
 .welcome-hero {
+  max-width: 100%;
   display: grid;
   place-content: center;
   text-align: center;
@@ -190,11 +221,7 @@ nav.navbar.bootsnav ul.nav > li > a:focus {
   font-weight: 500;
   margin: 0 auto;
 }
-*{
-  box-sizing: border-box;
-  -moz-box-sizing:border-box;
-  -webkit-box-sizing: border-box;
-}
+
 header {
   background-color: #dfb0da;
   text-align: center;
@@ -217,10 +244,11 @@ header {
 }
 
 .box-menu{ 
-  display: block;
+  display: flex;
   align-items: center;
   background-color: #dfb0da;
   padding-top: 20px;
+  z-index: 999;
  }
  .box-menu ul{ 
     display: flex;
@@ -310,5 +338,10 @@ header {
   color: yellowgreen;
 }
 .toggle{
-  display: none;
+  /* display: none; */
+  color: #f5f7fa;
+  cursor: pointer;
+}
+.toggle i{
+  font-size: 30px;
 }

@@ -4,26 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Sofia"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <title>lab4</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <>
+  <body>
     <header>
       <div class="navbar-header">
-      <div class="toggle">
-        <i class="fa fa-bars"></i>
-      </div>
+        <div class="toggle">
+          <i class="fa fa-bars"></i>
+        </div>
         <a class="navbar-brand" href="index.html">ANH XUÂN</a>
       </div>
       <div class="box-menu">
@@ -31,44 +30,81 @@
           <li><a href="index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li>
-            <a href="">LABS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            <a href=""
+              >LABS <i class="fa fa-angle-down" aria-hidden="true"></i
+            ></a>
             <div class="box-submenu">
               <ul>
                 <li class="submenu-hover">
                   <a href="Lab5/index.html" target="_blank">LAB5</a>
                 </li>
                 <li class="submenu-hover">
-                  <a href="lab4.html">LAB4</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <a href="lab4.html">LAB4</a
+                  ><i class="fa fa-angle-right" aria-hidden="true"></i>
                   <div class="box-submenu-2">
                     <ul>
-                      <li ><a href="#Requirement " title="Requirement">Requirement</a></li>
+                      <li>
+                        <a href="#Requirement " title="Requirement"
+                          >Requirement</a
+                        >
+                      </li>
                       <li><a href="#Design" title="Design">Design</a></li>
-                      <li><a href="implement.html" title="Implement" target="_blank">Implement</a></li> 
+                      <li>
+                        <a
+                          href="implement.html"
+                          title="Implement"
+                          target="_blank"
+                          >Implement</a
+                        >
+                      </li>
                     </ul>
                   </div>
                 </li>
                 <li class="submenu-hover">
-                  <a href="">LAB6</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                  <a href="ex1.html">LAB6</a
+                  ><i class="fa fa-angle-right" aria-hidden="true"></i>
                   <div class="box-submenu-2">
                     <ul>
-                      <li class="submenu-hover"><a href="ex1.html">EX1</a><i class="fa fa-angle-right" aria-hidden="true"></i>
+                      <li class="submenu-hover">
+                        <a href="ex1.html">EX1</a
+                        ><i class="fa fa-angle-right" aria-hidden="true"></i>
                         <div class="box-submenu-3">
                           <ul>
-                            <li class="scroll"><a href="#Design_ex1" title="Design">Design</a></li>
-                            <li class="scroll"><a href="F_Patten/index.html" title="Implement" target="_blank">Implement</a></li> 
+                            <li class="scroll">
+                              <a href="#Design_ex1" title="Design">Design</a>
+                            </li>
+                            <li class="scroll">
+                              <a
+                                href="F_Patten/index.html"
+                                title="Implement"
+                                target="_blank"
+                                >Implement</a
+                              >
+                            </li>
                           </ul>
-                        </div>  
+                        </div>
                       </li>
-                      <li class="submenu-hover"><a href="ex2.html">EX2</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <div class="box-submenu-3">  
+                      <li class="submenu-hover">
+                        <a href="ex2.html">EX2</a
+                        ><i class="fa fa-angle-right" aria-hidden="true"></i>
+                        <div class="box-submenu-3">
                           <ul>
-                            <li class="scroll"><a href="#Design_ex2" title="Design">Design</a></li>
-                            <li class="scroll"><a href="Z_Pattern/index.html" title="Implement" target="_blank">Implement</a></li> 
+                            <li class="scroll">
+                              <a href="#Design_ex2" title="Design">Design</a>
+                            </li>
+                            <li class="scroll">
+                              <a
+                                href="Z_Pattern/index.html"
+                                title="Implement"
+                                target="_blank"
+                                >Implement</a
+                              >
+                            </li>
                           </ul>
-                        </div>  
+                        </div>
                       </li>
-                    </ul> 
-                  </div>                     
+                    </ul>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -85,12 +121,12 @@
       </div>
     </section>
     <script>
-      $(document).ready(function() {
-          $('.toggle').click(function() {
-              $('.box-menu').slideToggle();
-          });
-      })
-    </script>  
+      $(document).ready(function () {
+        $(".toggle").click(function () {
+          $(".box-menu").slideToggle();
+        });
+      });
+    </script>
     <section id="Requirement">
       <div class="tabcontent">
         <h1>Yêu Cầu</h1>
@@ -107,7 +143,7 @@
     <section id="Design">
       <div class="tabcontent">
         <h1>Bản Thiết Kế</h1>
-        <img src="./images/thietke.jpg" alt="thietke" />
+        <img src="./images/thietke.jpg" alt="thietke" style="width: 70%" />
         <button class="btn">
           <a href="./images/thietke.jpg" download="thietke.jpg"
             ><i class="fa fa-download"></i>Download</a
