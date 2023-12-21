@@ -54,6 +54,7 @@ body {
 .introduction{
   text-align: center;
   font-size: 2vh;
+  max-width : 100%;
 }
 .btn {
   background-color: DodgerBlue;
