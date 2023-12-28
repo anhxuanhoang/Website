@@ -87,36 +87,21 @@
               $('.box-menu').slideToggle();
           });
       })
-
       document.addEventListener("DOMContentLoaded", function () {
-    // Lấy phần tử menu cha và menu con
-    var labsMenu = document.getElementById("labsSubmenu");
-    var labsMenuLink = document.querySelector('.box-menu li a');
+      // Lấy phần tử menu cha và menu con
+      var labsMenu = document.getElementById("labsSubmenu");
+      var labsMenuLink = document.querySelector('.box-menu .toggle');
 
-    // Biến để theo dõi trạng thái của menu con
-    var isLabsMenuVisible = false;
-
-    // Thêm sự kiện chạm vào menu cha
-    labsMenuLink.addEventListener("click", function (e) {
-        // Ngăn chặn hành động mặc định của liên kết
+      // Thêm sự kiện click vào menu cha
+      labsMenuLink.addEventListener("click", function (e) {
+          // Ngăn chặn hành động mặc định của liên kết
         e.preventDefault();
 
-        // Đảo ngược trạng thái của menu con
-        isLabsMenuVisible = !isLabsMenuVisible;
-
-        // Thêm hoặc xóa lớp để hiển thị hoặc ẩn menu con
-        labsMenu.classList.toggle("show-submenu", isLabsMenuVisible);
-    });
-
-    // Thêm sự kiện để ẩn menu con khi người dùng chạm ra ngoài menu con
-    document.addEventListener("click", function (e) {
-        if (!labsMenu.contains(e.target) && !labsMenuLink.contains(e.target)) {
-            isLabsMenuVisible = false;
-            labsMenu.classList.remove("show-submenu");
-        }
+          // Thêm hoặc xóa lớp để hiển thị hoặc ẩn menu con
+        labsMenu.classList.toggle("show-submenu");
     });
 });
-
+     
   </script>
   </body>
 </html>
