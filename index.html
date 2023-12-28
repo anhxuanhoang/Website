@@ -25,7 +25,7 @@
       </div>
       <div class="box-menu">      
         <ul>
-          <li><a href="index.html">HOME</a></li>
+          <li><a href="index.ht">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li>
             <a href="">LABS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -33,6 +33,9 @@
               <ul>
                 <li class="submenu-hover">
                   <a href="Lab5/index.html" target="_blank">LAB5</a>
+                </li>
+                <li class="submenu-hover">
+                  <a href="Lab7/index.html" target="_blank">LAB7</a>
                 </li>
                 <li class="submenu-hover">
                   <a href="lab4.html">LAB4</a><i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -88,19 +91,21 @@
           });
       })
       $(document).ready(function() {
-    // Sự kiện click cho nút toggle
-    $('.toggle').click(function() {
-        $('.box-menu').slideToggle();
-    });
+      // Sự kiện click cho nút toggle
+        $('.toggle').click(function() {
+          $('.box-menu').slideToggle();
+        });
 
-    // Sự kiện click cho nút "LABS"
-    $('.box-menu ul li a:contains("LABS")').click(function(e) {
-        e.preventDefault();
+      // Sự kiện click cho nút "LABS"
+        $('.box-menu ul li a:contains("LABS")').click(function(e) {
+          e.preventDefault();
         // Tìm menu con và ẩn/hiện nó
-        $(this).siblings('.box-submenu').slideToggle();
-    });
-});
-     
+          $(this).siblings('.box-submenu').slideToggle();
+        });
+      });
+
+
+      
   </script>
   </body>
 </html>

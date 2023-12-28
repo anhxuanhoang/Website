@@ -10,7 +10,7 @@
     justify-content: space-between; 
   }
   .box-menu ul {
-    display: flex;
+    display: none;
     flex-direction: column;
   }
   .box-menu ul li {
@@ -246,7 +246,6 @@ header {
 .box-menu{ 
   display: flex;
   align-items: center;
-  cursor: pointer;
   background-color: #dfb0da;
   padding-top: 20px;
   z-index: 999;
@@ -314,14 +313,15 @@ header {
 .box-submenu-3 {
   display: none;
 }
+
 .box-menu ul li:hover .box-submenu ul li.submenu-hover:hover .box-submenu-2,
 .box-menu ul li:hover .box-submenu ul li.submenu-hover:hover .box-submenu-3 {
     display: block;
 }
 .box-menu ul li:hover .box-submenu ul{
     display: block;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 .box-menu ul li:hover .box-submenu ul li{
     width: 100%;
@@ -344,5 +344,5 @@ header {
   cursor: pointer;
 }
 .toggle i{
-  font-size: 30px;
+  font-size: 100px;
 }
