@@ -87,18 +87,17 @@
               $('.box-menu').slideToggle();
           });
       })
-      document.addEventListener("DOMContentLoaded", function () {
-      // Lấy phần tử menu cha và menu con
-      var labsMenu = document.getElementById("labsSubmenu");
-      var labsMenuLink = document.querySelector('.box-menu .toggle');
+      $(document).ready(function() {
+    // Sự kiện click cho nút toggle
+    $('.toggle').click(function() {
+        $('.box-menu').slideToggle();
+    });
 
-      // Thêm sự kiện click vào menu cha
-      labsMenuLink.addEventListener("click", function (e) {
-          // Ngăn chặn hành động mặc định của liên kết
+    // Sự kiện click cho nút "LABS"
+    $('.box-menu ul li a:contains("LABS")').click(function(e) {
         e.preventDefault();
-
-          // Thêm hoặc xóa lớp để hiển thị hoặc ẩn menu con
-        labsMenu.classList.toggle("show-submenu");
+        // Tìm menu con và ẩn/hiện nó
+        $(this).siblings('.box-submenu').slideToggle();
     });
 });
      
