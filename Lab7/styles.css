@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: rgb(233, 230, 226);
+}
+header {
+  background-color: #333;
+  color: rgb(255, 217, 217);
+  text-align: center;
+  padding: 1vh;
+  font-size: 1vh;
+}
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+.navbar i {
+  font-family: Font Awesome 6 Free;
+  font-weight: 700;
+}
+.menu .main-menu a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:hover {
+  text-decoration: underline;
+}
+.navbar .main-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+#toggle,
+.navbar label {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .menu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+  }
+  .main-menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  #toggle:checked ~ .menu {
+    max-height: 100%;
+  }
+}
+.main-menu {
+  display: flex;
+}
+nav .main-menu li a {
+  color: #9e1b1b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 2vh;
+  display: block;
+  padding: 1vh 3vh;
+}
+nav .main-menu li:hover a {
+  background: #daa396;
+  transition: all 0.3s;
+}
+h2 {
+  font-size: 3vh;
+  padding-top: 2vh;
+}
+section {
+  padding: 3vh;
+}
+form {
+  max-width: 40%;
+  margin: 0 auto;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 2vh;
+  margin-bottom: 50px;
+  font-size: 2vh;
+  box-sizing: border-box;
+}
+label {
+  font-size: 2.5vh;
+}
+button {
+  font-size: 2.8vh;
+  float: right;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #b93b3b;
+  color: white;
+  padding: 10px 50px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #31a439;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
