@@ -19,14 +19,14 @@
 <body>
   <header>
     <div class="navbar-header">
-      <div class="toggle">
-        <i class="fa fa-bars"></i>
-      </div>
       <a class="navbar-brand" href="index.html">ANH XUÂN</a>
     </div>
+    <nav class="navbar">
+      <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
+      <label for="toggle"><i class="fa-regular fa-bars"></i></label> 
     <div class="box-menu">      
-      <ul>
-        <li><a href="index.html">HOME</a></li>
+      <ul class="main-menu">
+        <li><a href="index.ht">HOME</a></li>
         <li><a href="about.html">ABOUT</a></li>
         <li>
           <a href="">LABS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -37,6 +37,9 @@
               </li>
               <li class="submenu-hover">
                 <a href="Lab7/index.html" target="_blank">LAB7</a>
+              </li>
+              <li class="submenu-hover">
+                <a href="Lab8/index.html" target="_blank">LAB8</a>
               </li>
               <li class="submenu-hover">
                 <a href="lab4.html">LAB4</a><i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -74,8 +77,9 @@
             </ul>
           </div>
         </li>
-      </ul>
+      </ul>  
     </div>
+    </nav>
   </header>
   <section id="home" class="welcome-hero">
     <div class="container">
@@ -84,15 +88,7 @@
         <p>I'M XUAN</p>
       </div>
     </div>
-  </section>
-  <script>
-    $(document).ready(function() {
-        $('.toggle').click(function() {
-            $('.box-menu').slideToggle();
-        });
-    })
-
-</script>  
+  </section> 
   <section id="Design_ex1">
       <div class="tabcontent">
           <h1>Bản Thiết Kế F-Patten</h1>
