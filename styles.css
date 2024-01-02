@@ -1,23 +1,4 @@
-@media screen and (max-width: 600px) {
-  .boxmenu {
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-  }
-  .main-menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  .navbar label {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-  }
-  #toggle:checked ~ .boxmenu {
-    max-height: 100%;
-  }
-}
+
 *{
   box-sizing: border-box;
   -moz-box-sizing:border-box;
@@ -107,7 +88,6 @@ ul li {
   font-weight: 700;
   padding-left: 2vh;
 }
-
 
 .navbar-header a.navbar-brand,
 .navbar-header a.navbar-brand:hover,
@@ -210,6 +190,27 @@ header {
 .navbar label {
   display: none;
 }
+@media screen and (max-width: 600px) {
+  .boxmenu {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+  .main-menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  .navbar label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  #toggle:checked ~ .boxmenu {
+    max-height: 100%;
+  }
+}
 .main-menu {
   display: flex;
 }
@@ -219,6 +220,9 @@ nav .main-menu li a {
 }
 nav .main-menu li:hover a {
   transition: all 0.3s;
+}
+label {
+  font-size: 2.5vh;
 }
 
 .box-menu{ 
