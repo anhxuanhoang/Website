@@ -15,18 +15,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 10vh;
 }
 #form_thongTin {
   max-width: 700px;
   flex-grow: 1;
-  padding: 30px 50px 40px;
+  padding: 20px 50px 40px;
   box-shadow: 0px 0px 17px 2px rgb(55, 0, 255);
 }
 h1 {
-  font-size: 45px;
+  font-size: 30px;
   color: black;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .form {
   display: flex;
@@ -47,7 +48,7 @@ h1 {
   outline-style: none;
   color: #241a1a;
   flex-grow: 1;
-  width: 25vh;
+  width: 60vh;
 }
 .form input [type="text"] {
   padding: 2px;
@@ -86,13 +87,38 @@ h1 {
   background-color: #fff;
   border: 5%;
   padding: 10px 0px;
-  font-size: 14px;
+  font-size: 10px;
   background-color: rgba(237, 228, 228, 0.948);
   color: rgba(0, 0, 0, 0.53);
   cursor: pointer;
-  width: 25vh;
-  height: 1.7vh;
+  width: 60vh;
+  height: 6vh;
 }
 .form_select option {
-  font-size: 30px;
+  font-size: 10px;
+}
+.tab{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f2c5de;
+  
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+.tab button:hover {
+  background-color: #eb88d5;
+}
+.tab button.active {
+  background-color: #f593e3;
+}
+#Requirement{
+  padding-top: 10px;
 }

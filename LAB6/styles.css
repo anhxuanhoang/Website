@@ -1,0 +1,42 @@
+.tab{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f2c5de;
+    
+  }
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  .tab button:hover {
+    background-color: #eb88d5;
+  }
+  .tab button.active {
+    background-color: #f593e3;
+  }
+  #Requirement{
+    padding-top: 10px;
+  }
+  .btn {
+    background-color: DodgerBlue;
+    border: none;
+    color: white;
+    padding: 1% 0%;
+    cursor: pointer;
+    width: 20%;
+    margin: 0 40%;
+  }
+  .btn:hover {
+    background-color: RoyalBlue;
+  }
+  .btn a {
+    font-size: 2vh;
+    color: white;
+    text-decoration: none;
+  }

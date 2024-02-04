@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>lab4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Requirement')">Requirement</button>
+      <button class="tablinks" onclick="openCity(event, 'Design')">Design</button>
+      <button class="tablinks" onclick="openCity(event, 'Implement')">Implement</button>
+    </div>
+    <div id="Requirement" class="tabcontent">
+      <p>
+        Yêu cầu: Chọn 1 đối tượng bất kỳ trong thế giới thực, ví dụ như lớp môn học, giảng viên,… Sau đó thiết kế chức năng Quản lý đối tượng đó trên html bao gồm các tính năng thêm, sửa, xóa, tìm kiếm cho đối tượng đó. Ví dụ, làm chức năng Quản lý Sinh viên, bao gôm tính năng thêm, sửa, xóa, tìm kiếm. Chú ý: Các thành viên trong lớp, trong nhóm không được chọn các đối tượng giống nhau.  <br>
+        Tạo 1 menu Lab4 trên website cá nhân (sử dụng thẻ trong html) bao gồm các tab sau: <br>
+        <br>
+        1. Tab Requirement: copy lại nội dung của phần 1 ở trên (Yêu cầu) vào đây (và trình bày lại cho đẹp) <br>
+        2. Tab Design: để link tới các file sau đây: <br>
+        Thiết kế trên giấy (chụp lại ảnh) (có nút Download để tải ảnh về) <br>
+        Chụp lại màn hình đã thiết kế trên HTML (có nút Download và Go to Figma để link tới link Figma - share ở dạng file để cô có thể coi từng thành phần)
+        3. Tab Implement: là trang html của chức năng Quản lý đó <br>
+        Sau khi làm xong, upload toàn bộ lên website cá nhân trên github.
+      </p>
+    </div>
+    <div id="Design" class="tabcontent">
+      <h1>Bản Thiết Kế</h1>
+        <img src="./images/thietke.jpg" alt="thietke" style="width: 70%" />
+        <button class="btn">
+          <a href="./images/thietke.jpg" download="thietke.jpg"
+            ><i class="fa fa-download"></i>Download</a
+          >
+        </button>
+        <img src="./images/Lab4_img.png" alt="hoanchinh" style="width: 100%" />
+        <button class="btn">
+          <a href="./images/Lab4_img.png" download="Lab4_img.png"
+            ><i class="fa fa-download"></i>Download</a
+          >
+        </button>
+    </div>
+    <div id="Implement" class="tabcontent">
+      <div class="form">
+        <h1>Thông Tin Máy Tính</h1>
+        <label>Tên máy</label>
+        <input type="text" id="name" />
+        <br />
+        <label>Hệ điều hành</label>
+        <input type="text" id="system" />
+        <br />
+        <label>CPU</label>
+        <input type="text" id="cpu" />
+        <br />
+        <label>Giá tiền</label>
+        <input type="text" id="coins" />
+        <br />
+        <button type="button" onclick="addComputer()">Thêm</button>
+        <button type="button" onclick="saveEditedComputer()">Lưu</button>
+        <div class="search">
+          <button type="button" onclick="showSearchModal()">Tìm kiếm</button>
+          <div id="searchModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="hideSearchModal()">&times;</span>
+              <label>Tìm theo tên máy:</label>
+              <input type="text" id="searchName" oninput="searchComputer()" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="comTable">
+        <h1>Danh Sách</h1>
+        <table style="width: 80%">
+          <tr>
+            <td>Tên Máy</td>
+            <td>Hệ điều hành</td>
+            <td>CPU</td>
+            <td>Giá tiền</td>
+          </tr>
+          <tbody id="comList"></tbody>
+        </table>
+      </div>
+      <script>
+        let computers = [];
+        const comTable = document.getElementById("comTable");
+        const comList = document.getElementById("comList");
+        let editComputer = null;
+  
+        function addComputer() {
+          const comName = document.getElementById("name").value;
+          const comSystem = document.getElementById("system").value;
+          const comCPU = document.getElementById("cpu").value;
+          const comCoins = document.getElementById("coins").value;
+  
+          if (comName && comSystem && comCPU && comCoins) {
+            const com = {
+              name: comName,
+              system: comSystem,
+              cpu: comCPU,
+              coins: comCoins,
+            };
+            computers.push(com);
+  
+            const newRow = comList.insertRow();
+            newRow.innerHTML = `<td>${com.name}</td><td>${com.system}</td><td>${com.cpu}</td><td>${com.coins}</td><td><button onclick="editComputerRow(this)">Sửa</button><button onclick="deleteComputerRow(this)">Xóa</button></td>`;
+  
+            document.getElementById("comName").value = "";
+            document.getElementById("comSystem").value = "";
+            document.getElementById("comCPU").value = "";
+            document.getElementById("comCoins").value = "";
+          }
+        }
+  
+        function editComputerRow(button) {
+          const row = button.closest("tr");
+          const comName = row.cells[0].textContent;
+          const comSystem = row.cells[1].textContent;
+          const comCPU = row.cells[2].textContent;
+          const comCoins = row.cells[3].textContent;
+  
+          editComputer = {
+            name: comName,
+            system: comSystem,
+            cpu: comCPU,
+            coins: comCoins,
+          };
+          document.getElementById("name").value = comName;
+          document.getElementById("system").value = comSystem;
+          document.getElementById("cpu").value = comCPU;
+          document.getElementById("coins").value = comCoins;
+        }
+  
+        function saveEditedComputer() {
+          if (editComputer) {
+            editComputer.name = document.getElementById("name").value;
+            editComputer.system = document.getElementById("system").value;
+            editComputer.cpu = document.getElementById("cpu").value;
+            editComputer.coins = document.getElementById("coins").value;
+  
+            const rows = comList.getElementsByTagName("tr");
+            for (let i = 0; i < rows.length; i++) {
+              if (rows[i].cells[0].textContent === editComputer.name) {
+                rows[i].cells[0].textContent = editComputer.name;
+                rows[i].cells[1].textContent = editComputer.system;
+                rows[i].cells[2].textContent = editComputer.cpu;
+                rows[i].cells[3].textContent = editComputer.coins;
+                break;
+              }
+            }
+  
+            document.getElementById("name").value = "";
+            document.getElementById("system").value = "";
+            document.getElementById("cpu").value = "";
+            document.getElementById("coins").value = "";
+  
+            editedComputer = null;
+          }
+        }
+  
+        function deleteComputerRow(button) {
+          const row = button.closest("tr");
+          const comName = row.cells[0].textContent;
+          const comIndex = computers.findIndex((s) => s.name === comName);
+  
+          if (comIndex !== -1) {
+            computers.splice(comIndex, 1);
+            row.remove();
+          }
+        }
+  
+        function showSearchModal() {
+          document.getElementById("searchModal").style.display = "block";
+        }
+  
+        function hideSearchModal() {
+          document.getElementById("searchModal").style.display = "none";
+        }
+  
+        function searchComputer() {
+          const searchName = document.getElementById("searchName").value;
+          const filteredComputers = computers.filter((com) =>
+            com.name.includes(searchName)
+          );
+          displayComputers(filteredComputers);
+        }
+  
+        function displayComputers(computers) {
+          const tbody = comList;
+          tbody.innerHTML = "";
+  
+          computers.forEach((com) => {
+            const newRow = tbody.insertRow();
+            newRow.innerHTML = `<td>${com.name}</td><td>${com.system}</td><td>${com.cpu}</td><td>${com.coins}</td>`;
+          });
+        }
+  
+        displayComputers(computers);
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
+    </div> 
+    
+  </body>
+</html>

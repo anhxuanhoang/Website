@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="styles.css" />
+    <title>Lab6</title>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'EX1')">EX1</button>
+        <button class="tablinks" onclick="openCity(event, 'EX2')">EX2</button>
+    </div>
+    <div id="EX1" class="tabcontent">
+        <div class="tab">
+            <button class="tablinks" onclick="openSubCity(event, 'Design_ex1')">Design</button>
+            <button class="tablinks" onclick="openSubCity(event, 'Implement_ex1')">Implement</button>
+        </div>
+        <div id="Design_ex1" class="subtabcontent">
+            <h1>Bản Thiết Kế F-Patten</h1>
+              <img src="./images/F-Partten.png" alt="F-Patten" style="width: 100%" />
+              <button class="btn">
+                <a href="./images/F-Partten.png" download="Lab4_img.png"
+                  ><i class="fa fa-download"></i>Download</a>
+              </button>
+        </div>
+        <div id="Implement_ex1" class="subtabcontent">
+            <a href="./F_Patten/index.html">F_Patten</a>
+        </div>
+    </div>
+    <div id="EX2" class="tabcontent">
+        <div class="tab">
+            <button class="tablinks" onclick="openSubCity(event, 'Design_ex2')">Design</button>
+            <button class="tablinks" onclick="openSubCity(event, 'Implement_ex2')">Implement</button>
+        </div>
+        <div id="Design_ex2" class="subtabcontent">
+            <h1>Bản Thiết Kế Z_Patten</h1>
+              <img src="./images/Z-Patten.png" alt="Z-Patten" style="width: 100%" />
+              <button class="btn">
+                <a href="./images/Z-Patten.png" download="Lab4_img.png"
+                  ><i class="fa fa-download"></i>Download</a>
+              </button>
+        </div>
+        <div id="Implement_ex2" class="subtabcontent">
+            <a href="./Z_Patten/index.html">Z_Patten</a>
+        </div>
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    function openSubCity(evt, cityName) {
+        var i, subtabcontent, subtablinks;
+        subtabcontent = document.getElementsByClassName("subtabcontent");
+        for (i = 0; i < subtabcontent.length; i++) {
+            subtabcontent[i].style.display = "none";
+        }
+        subtablinks = document.getElementsByClassName("subtablinks");
+        for (i = 0; i < subtablinks.length; i++) {
+            subtablinks[i].className = subtablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    </script>
+</body>
+</html>

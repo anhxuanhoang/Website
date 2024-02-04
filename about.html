@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link
-      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Sofia"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>About</title>
@@ -20,62 +28,17 @@
       </div>
       <nav class="navbar">
         <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
-        <label for="toggle"><i class="fa-regular fa-bars"></i></label> 
-      <div class="box-menu">      
-        <ul class="main-menu">
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT</a></li>
-          <li>
-            <a href="">LABS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-            <div class="box-submenu">
-              <ul>
-                <li class="submenu-hover">
-                  <a href="Lab5/index.html" target="_blank">LAB5</a>
-                </li>
-                <li class="submenu-hover">
-                  <a href="Lab7/index.html" target="_blank">LAB7</a>
-                </li>
-                <li class="submenu-hover">
-                  <a href="Lab8/index.html" target="_blank">LAB8</a>
-                </li>
-                <li class="submenu-hover">
-                  <a href="lab4.html">LAB4</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                  <div class="box-submenu-2">
-                    <ul>
-                      <li ><a href="#Requirement " title="Requirement">Requirement</a></li>
-                      <li><a href="#Design" title="Design">Design</a></li>
-                      <li><a href="implement.html" title="Implement" target="_blank">Implement</a></li> 
-                    </ul>
-                  </div>
-                </li>
-                <li class="submenu-hover">
-                  <a href="ex1.html">LAB6</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                  <div class="box-submenu-2">
-                    <ul>
-                      <li class="submenu-hover"><a href="ex1.html">EX1</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <div class="box-submenu-3">
-                          <ul>
-                            <li class="scroll"><a href="#Design_ex1" title="Design">Design</a></li>
-                            <li class="scroll"><a href="F_Patten/index.html" title="Implement" target="_blank">Implement</a></li> 
-                          </ul>
-                        </div>  
-                      </li>
-                      <li class="submenu-hover"><a href="ex2.html">EX2</a><i class="fa fa-angle-right" aria-hidden="true"></i>
-                        <div class="box-submenu-3">  
-                          <ul>
-                            <li class="scroll"><a href="#Design_ex2" title="Design">Design</a></li>
-                            <li class="scroll"><a href="Z_Pattern/index.html" title="Implement" target="_blank">Implement</a></li> 
-                          </ul>
-                        </div>  
-                      </li>
-                    </ul> 
-                  </div>                     
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>  
-      </div>
+        <label for="toggle"><i class="fa-regular fa-bars" style="color: #fff;"></i></label> 
+        <div class="box-menu">      
+          <ul class="main-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li>
+              <a href="labs.html">LABS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="result.html">RESULT</a></li>
+          </ul>  
+        </div>
       </nav>
     </header>
     <section id="home" class="welcome-hero">
@@ -88,11 +51,17 @@
     </section>
     <div class="introduction">
       <h1>About Me</h1>
-      <p>
-        Tôi tên: Hoàng Thị Anh Xuân. MSSV là: 22130333. Hiện học chuyên ngành
-        công nghệ thông tin tại Đại học Nông Lâm.
-      </p>
-      <img src="./images/girl.jpg" alt="Xuan" style="width: 50%;"/>
+      <img src="./images/girl.jpg" alt="Xuan" />
+      <div class="info">
+        <p>
+          <strong>Full name:</strong>Hoàng Thị Anh Xuân <br />
+          <strong>Gender:</strong> Female <br />
+          <strong>D.O.B:</strong> April 01, 2004 <br />
+          <strong>MSSV:</strong> 22130333 <br />
+          <strong>Class:</strong> DH22DTA <br />
+          <strong>Email:</strong> hoangthianhxuan04@gmail.com
+        </p>
+      </div>
     </div>
   </body>
 </html>

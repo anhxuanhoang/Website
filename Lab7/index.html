@@ -13,40 +13,68 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>ANHXUAN RESTAURANT</h1>
-    </header>
-    <nav class="navbar">
-      <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
-      <label for="toggle"><i class="fa-regular fa-bars"></i></label>
-      <div class="menu">
-        <ul class="main-menu">
-          <li><a href="#">TRANG CHỦ</a></li>
-          <li><a href="#">MENU CHÍNH</a></li>
-          <li><a href="#">ĐẶT BÀN</a></li>
-          <li><a href="#">SỰ KIỆN</a></li>
-          <li><a href="#">THÀNH VIÊN</a></li>
-          <li><a href="">LIÊN HỆ</a></li>
-        </ul>
-      </div>
-    </nav>
-    <section class="animate-fade-in">
-      <h2>LIÊN HỆ:</h2>
-      <form action="#" method="post">
-        <label for="name">Họ Tên</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">Số Điện Thoại</label>
-        <input type="text" id="phone" name="phone" required />
-
-        <label for="message">Thông điệp</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit">Gửi</button>
-      </form>
-    </section>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Requirement')">Requirement</button>
+      <button class="tablinks" onclick="openCity(event, 'Implement')">Implement</button>
+    </div>
+    <div id="Requirement" class="tabcontent">
+      <p>
+        * Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions <br>
+        * Có biểu mẫu liên hệ <br>
+        * Upload lên github
+      </p>
+    </div>
+    <div id="Implement" class="tabcontent">
+      <header>
+        <h1>ANHXUAN RESTAURANT</h1>
+      </header>
+      <nav class="navbar">
+        <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
+        <label for="toggle"><i class="fa-regular fa-bars"></i></label>
+        <div class="menu">
+          <ul class="main-menu">
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="#">MENU CHÍNH</a></li>
+            <li><a href="#">ĐẶT BÀN</a></li>
+            <li><a href="#">SỰ KIỆN</a></li>
+            <li><a href="#">THÀNH VIÊN</a></li>
+            <li><a href="">LIÊN HỆ</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section class="animate-fade-in">
+        <h2>LIÊN HỆ:</h2>
+        <form action="#" method="post">
+          <label for="name">Họ Tên</label>
+          <input type="text" id="name" name="name" required />
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+  
+          <label for="phone">Số Điện Thoại</label>
+          <input type="text" id="phone" name="phone" required />
+  
+          <label for="message">Thông điệp</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+  
+          <button type="submit">Gửi</button>
+        </form>
+      </section>
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
   </body>
 </html>

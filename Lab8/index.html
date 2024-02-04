@@ -9,44 +9,73 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>Your Website</title>
+    <title>Lab8</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <h1>ANHXUAN CINEMA</h1>
-    </header>
-    <nav class="navbar">
-      <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
-      <label for="toggle"><i class="fa-regular fa-bars"></i></label>
-      <div class="menu">
-        <ul class="main-menu">
-          <li><a href="#">TRANG CHỦ</a></li>
-          <li><a href="#">PHIM</a></li>
-          <li><a href="#">RẠP</a></li>
-          <li><a href="#">THÀNH VIÊN</a></li>
-          <li><a href="#">THÔNG TIN VÉ</a></li>
-          <li><a href="#">LIÊN HỆ</a></li>
-        </ul>
-      </div>
-    </nav>
-    <section class="animate-fade-in">
-      <h2>Đăng ký Thành viên</h2>
-      <form action="#" method="post">
-        <label for="name">Nhập tên:</label>
-        <input type="text" id="name" name="name" required />
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Requirement')">Requirement</button>
+      <button class="tablinks" onclick="openCity(event, 'Implement')">Implement</button>
+    </div>
+    <div id="Requirement" class="tabcontent">
+      <p>
+        * Tạo một trang Web có nội dung bất kỳ, sử dụng linh hoạt tất cả những phần sau: Input Controls, Navigation, Animations, Default Settings, Guided Actions <br>
+        * Có biểu mẫu liên hệ <br>
+        * Upload lên github
+      </p>
+    </div>  
 
-        <label for="name">Nhập họ và tên đệm:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="phone">Số Điện Thoại:</label>
-        <input type="text" id="phone" name="phone" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <button type="submit">Đăng ký ngay</button>
-      </form>
-    </section>
+    <div id="Implement" class="tabcontent">
+      <header>
+        <h1>ANHXUAN CINEMA</h1>
+      </header>
+      <nav class="navbar">
+        <input type="checkbox" name="toggle" id="toggle" class="toggle-menu" />
+        <label for="toggle"><i class="fa-regular fa-bars"></i></label>
+        <div class="menu">
+          <ul class="main-menu">
+            <li><a href="#">TRANG CHỦ</a></li>
+            <li><a href="#">PHIM</a></li>
+            <li><a href="#">RẠP</a></li>
+            <li><a href="#">THÀNH VIÊN</a></li>
+            <li><a href="#">THÔNG TIN VÉ</a></li>
+            <li><a href="#">LIÊN HỆ</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section class="animate-fade-in">
+        <h2>Đăng ký Thành viên</h2>
+        <form action="#" method="post">
+          <label for="name">Nhập tên:</label>
+          <input type="text" id="name" name="name" required />
+  
+          <label for="name">Nhập họ và tên đệm:</label>
+          <input type="text" id="name" name="name" required />
+  
+          <label for="phone">Số Điện Thoại:</label>
+          <input type="text" id="phone" name="phone" required />
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+  
+          <button type="submit">Đăng ký ngay</button>
+        </form>
+      </section>
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
   </body>
 </html>

@@ -6,7 +6,7 @@
 }
 body {
   font-family: "Times New Roman", Times, serif;
-  background-color: rgb(214, 221, 221);
+  /* background-color: rgb(214, 221, 221); */
 }
 header {
   background-color: #3d8aae;
@@ -128,4 +128,32 @@ button:hover {
 }
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out;
+}
+.tab{
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f2c5de;
+  
+}
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  color: #000;
+}
+.tab button:hover {
+  background-color: #eb88d5;
+}
+.tab button.active {
+  background-color: #f593e3;
+}
+#Requirement{
+  padding-top: 10px;
+  font-size: 25px;
+  padding-left: 10px;
 }

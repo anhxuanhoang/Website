@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    flex-wrap: wrap;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #e78229;
+    color: #fff3e8;
+}
+header{
+    flex-wrap: wrap;
+    background-color: #56493e;
+    color: #fff3e8;
+    padding: 2px;
+    text-align: center;
+    font-size: 1px;
+}
+header h2{
+    font-size: 3vh;
+    float: left;
+    padding-top: 8px;
+}
+nav ul{
+    list-style: none;
+    padding: 10px;
+    text-align: right;
+    font-size: 10px;
+}
+nav li{
+    display: inline;
+}
+nav a{
+    text-decoration: none;
+    color: #fff3e8;
+    font-weight: 600;
+    font-size: 3vh;
+    padding: 20px;
+}
+.container{
+    flex-wrap: wrap;
+    background-color: #e78229;
+}
+.grid-2-cols{
+    display: grid;
+}
+.text-heading{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.text-description{
+    font-size: 1.5rem;
+}
+button{
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3vh;
+    color: #555;
+    font-weight: bold;
+    padding: 2.5vh;
+    display: inline-block;
+    margin-right: 10rem;
+    margin-top: -4rem;
+    border: none;
+    border-radius: 10px 10px 10px 10px ;
+    background-color: #ffc18b;
+}
+.img{
+  flex-wrap: wrap;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background: url(./images/vanGogh.jpg);
+  background-position: center;
+  /* background-size: cover; */
+  padding: 10% 0;
+  width: 100%;
+}
+
+  
